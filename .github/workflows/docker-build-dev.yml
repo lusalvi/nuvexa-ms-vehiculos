@@ -1,9 +1,9 @@
-name: Deploy TEST - Vehiculos
+name: Deploy DEV - Vehiculos
 
 on:
   push:
     tags:
-      - "*-test"
+      - "*-dev"
 
 jobs:
   build-and-push:
@@ -23,4 +23,4 @@ jobs:
       - name: Build & Push Docker Image
         run: |
           docker build -t lusalvi/ms-vehiculos:${{ steps.tag.outputs.tag }} .
-          docker push lusalvi/ms-vehiculos:${{ steps.tag.outputs.tag }}
+          docker push lusalvi/ms-vehiculos:${{ steps.tag.outputs.tag }}
