@@ -1,6 +1,5 @@
-name: Build and Push Docker Image - frontend
+name: Build and Push Docker Image - ms-vehiculos
 
-# prueba de push a docker hub
 on:
   push:
     branches: [main]
@@ -24,4 +23,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: lusalvi/frontend:latest
+          tags: lusalvi/ms-vehiculos:latest
