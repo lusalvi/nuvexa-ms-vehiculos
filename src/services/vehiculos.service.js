@@ -10,6 +10,16 @@ async function obtenerVehiculos() {
   return data;
 }
 
+async function obtenerPatentesVehiculos() {
+  const { data, error } = await supabase
+    .from(`${prefix}vehiculos`)
+    .select('patente');
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+
 async function buscarVehiculosPorPatente(patente) {
   const { data, error } = await supabase
     .from(`${prefix}vehiculos`)
@@ -22,5 +32,6 @@ async function buscarVehiculosPorPatente(patente) {
 
 module.exports = {
   obtenerVehiculos,
-  buscarVehiculosPorPatente
+  buscarVehiculosPorPatente,
+  obtenerPatentesVehiculos
 };

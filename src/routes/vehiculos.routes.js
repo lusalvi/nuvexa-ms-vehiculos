@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {
   obtenerVehiculos,
-  buscarVehiculosPorPatente
+  buscarVehiculosPorPatente,
+  obtenerPatentesVehiculos
 } = require('../services/vehiculos.service');
 
 // GET /api/vehiculos
@@ -15,13 +16,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET /api/vehiculos/patentes
 router.get('/patentes', async (req, res) => {
   try {
-    const { data, error } = await supabase
-      .from(`${prefix}vehiculos`)
-      .select('patente');
-
-    if (error) throw error;
+    const data = await obtenerPatentesVehiculos();
     res.json(data);
   } catch (err) {
     console.error('Error al obtener patentes:', err);
