@@ -15,6 +15,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/vehiculos/patentes', async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from(`${prefix}vehiculos`)
+      .select('patente');
+
+    if (error) throw error;
+    res.json(data);
+  } catch (err) {
+    console.error('Error al obtener patentes:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // GET /api/vehiculos/buscar?patente=ABC123
 router.get('/buscar', async (req, res) => {
   try {
