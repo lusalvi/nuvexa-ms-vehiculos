@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/vehiculos/patentes', async (req, res) => {
+router.get('/patentes', async (req, res) => {
   try {
     const { data, error } = await supabase
       .from(`${prefix}vehiculos`)
