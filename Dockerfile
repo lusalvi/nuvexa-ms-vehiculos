@@ -2,7 +2,7 @@
 FROM node:18
 
 # Carpeta de trabajo dentro del contenedor
-WORKDIR /app
+WORKDIR usr/src/app
 
 # Copiar package.json y lock (si lo tenés)
 COPY package*.json ./

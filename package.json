@@ -4,7 +4,7 @@
   "description": "Microservicio de vehículos para GeoBuild S.A.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "cd /app && node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [
@@ -12,7 +12,7 @@
     "vehiculos",
     "supabase"
   ],
-  "author": "Luci",
+  "author": "Nuvexa",
   "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0",
