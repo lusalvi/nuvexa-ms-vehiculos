@@ -1,0 +1,9 @@
+# Ignorar archivos de entorno generales
+.env
+.env.dev
+.env.test
+.env.prod
+
+# Opcionalmente, ignorar cualquier archivo .env en cualquier subdirectorio
+**/.env
+**/.env.*
